@@ -11,6 +11,7 @@ Remove excess packages (apache2, sendmail, bind9, samba, nscd, etc) and install 
  - exim4 (light mail server)
  - nginx (v1.0+ from dotdeb, configured for lowend VPS. Change worker_processes number in /etc/nginx/nginx.conf according to number of your CPUs)
  - vim, nano, mc, htop, iftop & iotop (more to come...)
+ - Wordpress
 
 Includes sample nginx config files for PHP sites. You can create a basic site shell (complete with nginx vhost) like this:
 
@@ -32,6 +33,7 @@ When running the iptables or dropbear install you must specify a SSH port. Remem
 	$ ./setup-debian.sh php
 	$ ./setup-debian.sh exim4
 	$ ./setup-debian.sh site example.com
+	$ ./setup-debian.sh wordpress example.com
 
 #### ... and now time for some extras
 
