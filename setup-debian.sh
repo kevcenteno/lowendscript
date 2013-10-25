@@ -475,7 +475,9 @@ END
 
 	# PHP/Nginx needs permission to access this
 	chown www-data:www-data -R "/var/www/$1"
-
+	find "/var/www/$1/public" -type d -exec chmod 2775 {} +
+	find "/var/www/$1/public" -type f -exec chmod 0664 {} +
+	
 	invoke-rc.d nginx restart
 
 	print_warn "New site successfully installed."
@@ -608,7 +610,9 @@ END
 
 	# PHP/Nginx needs permission to access this
 	chown www-data:www-data -R "/var/www/$1"
-
+	find "/var/www/$1/public" -type d -exec chmod 2775 {} +
+	find "/var/www/$1/public" -type f -exec chmod 0664 {} +
+	
 	invoke-rc.d nginx restart
 
 	print_warn "New wordpress site successfully installed."
